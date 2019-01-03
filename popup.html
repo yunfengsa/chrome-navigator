@@ -1,0 +1,71 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>快速导航</title>
+    <style type="text/css">
+      body {
+        margin: 10px;
+        white-space: nowrap;
+      }
+
+      h1 {
+        font-size: 15px;
+      }
+
+      #container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+      }
+      button {  
+        text-align: center;  
+        font: 14px/100% Arial, Helvetica, sans-serif;  
+         padding: .25em 1em .25em;   
+        text-shadow: 0 1px 1px rgba(0,0,0,.3);  
+        -webkit-border-radius: .5em;   
+        -moz-border-radius: .5em;  
+        border-radius: .5em;  
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);  
+        -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);  
+        box-shadow: 0 1px 2px rgba(0,0,0,.2);  
+      }  
+      span{
+        text-align: center;  
+        font: 14px/100% Arial, Helvetica, sans-serif;  
+        /* padding: .5em 2em .55em;   */
+        text-shadow: 0 1px 1px rgba(0,0,0,.3);  
+      }
+      /* a{
+        font-size: 12px;
+        color: lightblue;
+        
+      } */
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+    -->
+    <script src="popup.js"></script>
+  </head>
+
+  <body>
+    <h1>Fliggy Navigator</h1>
+    <div id="container">
+      <span>目的地:</span>
+      <input placeholder="输入关键字" id="input" type="text" autofocus/>
+      <button id="button">起飞</button>
+    </div>
+    <div id="error" style="display: none">
+      关键字错误,查询不到哦~~
+    </div>
+  </body>
+</html>
